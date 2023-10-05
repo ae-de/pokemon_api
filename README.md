@@ -51,7 +51,7 @@ Status 400 Conflict
 }'
 
 ## Eliminar Entrenador
-```bash
+
 curl -X DELETE \
 http://localhost:8083/api/entrenadores \
 -H 'Content-Type: application/json' \
@@ -66,7 +66,7 @@ Status 200 OK
 {
     "message": "Entrenador borrado con éxito."
 }
-```bash
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
