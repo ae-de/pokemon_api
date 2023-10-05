@@ -22,14 +22,14 @@ Ejecute los siguientes comandos `curl` para validar el deploy del servicio.
 
  #Registrar Usuario
 ```bash
-curl -X POST \
-  http://localhost:8083/api/entrenadores \
+curl -X 'POST' \
+ ' http://localhost:8083/api/entrenadores \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
     "nombre": "Aristóteles",
     "edad": "22"
-  }
+  }'
 
 ## Resultado Esperado
 
@@ -59,14 +59,14 @@ http://localhost:8083/api/entrenadores \
   "nombre": "Arnulfo",
   "edad": "15"
 }'
-
+```bash
 ## Resultado Esperado
 
 Status 200 OK
 {
     "message": "Entrenador borrado con éxito."
 }
-
+```bash
 ### Reference Documentation
 For further reference, please consider the following sections:
 
