@@ -21,7 +21,7 @@ Se crearon notificaciones para:
 Ejecute los siguientes comandos `curl` para validar el deploy del servicio.
 
  #Registrar Usuario
-```bash
+
 curl -X 'POST' \
  ' http://localhost:8083/api/entrenadores \
   -H 'accept: application/json' \
