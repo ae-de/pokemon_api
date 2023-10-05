@@ -3,10 +3,14 @@
 ## Project
 
 Este microservicio se encarga de administrar a los entrenadores de Pokémon. 
-Proporciona endpoints para:
+
+Se crearon notificaciones para: 
+
  - Registrar entrenador
- - Eliminar entrenadores
- - No permitir nuevamente registrar un entrenador previamente  basado en su nombre y edad.
+    
+ - No permitir agregar nuevamente a un entrenador ya registrado.
+
+ - - Eliminar entrenadores
 
 ## Deploy
 
@@ -14,8 +18,9 @@ Proporciona endpoints para:
 
 ## Test
 
-Puedes realizar pruebas en este microservicio utilizando herramientas como `curl`. Aquí hay un ejemplo de cómo registrar un nuevo entrenador:
+Ejecute los siguientes comandos `curl` para validar el deploy del servicio.
 
+ #Registrar Usuario
 ```bash
 curl -X POST \
   http://localhost:8083/api/entrenadores \
@@ -26,9 +31,9 @@ curl -X POST \
     "edad": "22"
   }
 
-  
+## Resultado Esperado
 
-## Expected Result
+Status: 200 OK
 
 {
   "nombre": "Aristóteles",
@@ -40,9 +45,25 @@ curl -X POST \
 Sin embargo, no se permitirá registrar nuevamente a un entrenador con el mismo nombre y edad.
 Si intentas registrar al mismo entrenador, obtendrás una respuesta con un código de estado 409 Conflict
 
+Status 400 Conflict
 {
   "message": "Entrenador ya registrado. No se pueden registrar entrenadores duplicados."
 }
 
+## Eliminar Entrenador
 
+curl -X DELETE \
+http://localhost:8083/api/entrenadores \
+-H 'Content-Type: application/json' \
+-d '{
+  "nombre": "Arnulfo",
+  "edad": "15"
+}'
+
+## Resultado Esperado
+
+Status 200 OK
+{
+    "message": "Entrenador borrado con éxito."
+}
 
