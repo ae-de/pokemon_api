@@ -51,7 +51,7 @@ Status 400 Conflict
 }'
 
 ## Eliminar Entrenador
-
+```bash
 curl -X DELETE \
 http://localhost:8083/api/entrenadores \
 -H 'Content-Type: application/json' \
@@ -59,7 +59,7 @@ http://localhost:8083/api/entrenadores \
   "nombre": "Arnulfo",
   "edad": "15"
 }'
-```bash
+
 ## Resultado Esperado
 
 Status 200 OK
