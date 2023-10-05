@@ -31,7 +31,7 @@ curl -X 'POST' \
     "edad": "22"
   }'
 
-## Resultado Esperado
+'## Resultado Esperado
 
 Status: 200 OK
 
@@ -39,16 +39,16 @@ Status: 200 OK
   "nombre": "Aristóteles",
   "edad": "22",
   "pokemonesElegidos": []
-}
+}'
 
-## Restricción
+'## Restricción
 Sin embargo, no se permitirá registrar nuevamente a un entrenador con el mismo nombre y edad.
 Si intentas registrar al mismo entrenador, obtendrás una respuesta con un código de estado 409 Conflict
 
 Status 400 Conflict
 {
   "message": "Entrenador ya registrado. No se pueden registrar entrenadores duplicados."
-}
+}'
 
 ## Eliminar Entrenador
 
