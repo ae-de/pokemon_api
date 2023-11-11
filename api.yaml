@@ -1,0 +1,164 @@
+openapi: 3.0.0
+
+info:
+
+  title: Pokemon API
+
+  version: 1.0.0
+
+  description: Registry of trainers and their pokemon's
+
+
+
+paths:
+
+  /api/pokemons:
+
+    get:
+
+      summary: Get all Pokemon
+
+      responses:
+
+        '200':
+
+          description: Successful response
+
+          content:
+
+            application/json:
+
+              example:
+
+                - id: "1"
+
+                  name: "Pikachu"
+
+                  type: "Electric"
+
+                - id: "2"
+
+                  name: "Bulbasaur"
+
+                  type: "Grass/Poison"
+
+
+
+    post:
+
+      summary: Create a new Pokemon
+
+      requestBody:
+
+        required: true
+
+        content:
+
+          application/json:
+
+            schema:
+
+              type: object
+
+              properties:
+
+                name:
+
+                  type: string
+
+                  example: "Charmander"
+
+                type:
+
+                  type: string
+
+                  example: "Fire"
+
+      responses:
+
+        '201':
+
+          description: Pokemon created successfully
+
+          content:
+
+            application/json:
+
+              example:
+
+                id: "3"
+
+                name: "Charmander"
+
+                type: "Fire"
+
+
+
+  /api/trainers:
+
+    get:
+
+      summary: Get all Trainers
+
+      responses:
+
+        '200':
+
+          description: Successful response
+
+          content:
+
+            application/json:
+
+              example:
+
+                - id: "1"
+
+                  name: "Ash Ketchum"
+
+                - id: "2"
+
+                  name: "Misty"
+
+
+
+    post:
+
+      summary: Create a new Trainer
+
+      requestBody:
+
+        required: true
+
+        content:
+
+          application/json:
+
+            schema:
+
+              type: object
+
+              properties:
+
+                name:
+
+                  type: string
+
+                  example: "Brock"
+
+      responses:
+
+        '201':
+
+          description: Trainer created successfully
+
+          content:
+
+            application/json:
+
+              example:
+
+                id: "3"
+
+                name: "Brock"
+
