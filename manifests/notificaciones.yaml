@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  labels:
+
+    app: notificaciones
+
+  name: notificaciones
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: notificaciones
+
+  template:
+
+    metadata:
+
+      labels:
+
+            app: notificaciones
+
+    spec:
+
+      containers:
+
+      - image: docker.io/aede/notificaciones:v1
+
+        name: notificaciones
+
+        ports:
+
+        - containerPort: 8086
+
+          protocol: TCP
+
+        resources:
+
+          limits:
+
+            cpu: '1'
+
+            memory: 256Mi
+
+          requests:
+
+            cpu: '1'
+
+            memory: 128Mi
+
+---
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  labels:
+
+    app: notificaciones
+
+  name: notificaciones
+
+spec:
+
+  ports:
+
+  - port: 87
+
+    protocol: TCP
+
+
